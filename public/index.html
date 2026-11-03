@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Management System</h1>
+    <p class="sub">Manage student records using Node.js, Express and MongoDB.</p>
+
+    <div class="card">
+      <h2 id="formTitle">Add New Student</h2>
+      <form id="studentForm">
+        <label for="studentId">Student ID</label>
+        <input id="studentId" placeholder="Enter unique student ID" required>
+
+        <label for="name">Full Name</label>
+        <input id="name" placeholder="Enter full name" required minlength="2">
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Enter email address" required>
+
+        <label for="age">Age</label>
+        <input id="age" type="number" placeholder="Enter age" required min="1" max="120">
+
+        <button type="submit" id="submitBtn" class="btn blue">Add Student</button>
+        <button type="button" id="cancelBtn" class="btn grey" style="display:none">Cancel</button>
+      </form>
+      <p id="msg"></p>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <h2>All Students</h2>
+        <button id="refreshBtn" class="btn grey">Refresh</button>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Student ID</th><th>Name</th><th>Email</th><th>Age</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
